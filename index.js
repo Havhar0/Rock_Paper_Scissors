@@ -10,29 +10,34 @@ let computerScore = 0
 let playerPoints = document.getElementById("player-points")
 let computerPoints = document.getElementById("computer-points")
 
+const rockBtn = document.querySelector('#rock')
+const paperBtn = document.querySelector('#paper')
+const scissorsBtn = document.querySelector('#scissors')
+
 let playerWon = 5
 let computerWon = 5
 
+
+rockBtn.addEventListener('click', () => {
+    playerSelection = "Rock"
+    playGame();
+    
+})
+
+paperBtn.addEventListener('click', () => {
+    playerSelection = "Paper"
+    playGame();
+})
+
+scissorsBtn.addEventListener('click', () => {
+    playerSelection = "Scissors"
+    playGame();
+})
 
 
 function computerChoice() {
     let randomIndex = Math.floor( Math.random() * 3)
     return hands[randomIndex]
-}
-
-function chooseRock() {
-    playerSelection = "Rock"
-    playGame()
-}
-
-function choosePaper() {
-    playerSelection = "Paper";
-    playGame()
-}
-
-function chooseScissors() {
-    playerSelection = "Scissors";
-    playGame()
 }
 
 function playGame(){
@@ -42,10 +47,10 @@ function playGame(){
     }
     else{
         if (playerScore = playerWon){
-            console.log("player won");
+            alert("player won");
         }
         else if(computerScore = computerWon){
-            console.log("computer won")
+            alert("computer won")
         }
     }
 }
